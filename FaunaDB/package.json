@@ -1,0 +1,40 @@
+{
+  "name": "@serverless-componenets/faunadb",
+  "version": "0.0.1",
+  "description": "manage faunadb",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir dist --source-maps --copy-files --ignore **/node_modules --ignore **/*.test.js"
+  },
+  "keywords": [
+    "faunadb",
+    "serverless",
+    "serverless",
+    "components",
+    "component"
+  ],
+  "author": "Serverless, Inc.",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@babel/cli": "^7.1.0",
+    "@babel/core": "^7.1.0",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "eslint": "^4.18.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "jest": "^22.4.2",
+    "lint-staged": "^7.0.4",
+    "prettier": "^1.12.1"
+  },
+  "dependencies": {
+    "@serverless/utils": "0.0.14",
+    "faunadb": "^2.5.2"
+  }
+}

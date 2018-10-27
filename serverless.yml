@@ -1,0 +1,29 @@
+name: DevPulse
+extends: Component
+
+credentials:
+  type: EnvironmentBasedConfiguration
+  inputs:
+    variables:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - AWS_SESSION_TOKEN
+    - CF_ACCOUNT_ID
+    - CF_AUTH_KEY
+    - CF_AUTH_EMAIL
+
+variables:
+  type: EnvironmentBasedConfiguration
+  inputs:
+    variables:
+    - STAGE
+
+provider:
+  type: AwsProvider
+  inputs:
+    credentials:
+      accessKeyId: ${this.credentials.values.AWS_ACCESS_KEY_ID}
+      secretAccessKey: ${this.credentials.values.AWS_SECRET_ACCESS_KEY}
+      sessionToken: ${this.credentials.values.AWS_SESSION_TOKEN}
+    region: us-east-1
+

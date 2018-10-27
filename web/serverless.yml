@@ -1,0 +1,10 @@
+name: WebClient
+extends: Component
+
+components:
+  webFrontend:
+    type: AwsS3Website
+    inputs:
+      provider: ${this.provider}
+      bucket: ${this.variables.values.STAGE}-devpulse
+      assets: ${path}/dist

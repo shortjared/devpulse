@@ -1,0 +1,63 @@
+name: FaunaDB
+extends: Component
+main: ./dist/index.js
+
+version: 0.0.1
+description: "Create and manage FaunaDB instances"
+
+inputs:
+  domain:
+    type: string
+    required: false
+    default: db.fauna.com
+    description: The domain of your faunadb endpoint
+    displayName: Domain
+    example: fauna.example.com
+  scheme:
+    type: string
+    required: false
+    default: https
+    description: The scheme for your endpoint
+    displayName: Scheme
+    example: https
+  port:
+    type: string
+    required: false
+    default: 443
+    description: Port of your endpoint
+    displayName: Port
+    example: 443
+  databaseName:
+    type: string
+    required: true
+    description: Name of the db to use
+    displayName: Fauna Database Name
+    example: MyDB
+  adminKey:
+    type: string
+    required: true
+    description: The key for your database(s)
+    displayName: Secret Key
+    example: fnAC-YT44srertSER3-n2b-lN494dzGr570V1y2VPtn
+  classes:
+    type: string[]
+    example:
+        - posts
+        - authors
+        - comments
+  indexes:
+    type: object[]
+    example:
+      - name: all_posts
+        source: posts
+      - name: all_authors
+        source: authors
+      - name: all_comments
+        source: comments
+      - name: author_by_id
+        class: author
+        unique: true
+        terms:
+          - field:
+              - data
+              - id
